@@ -220,7 +220,8 @@ span {
   }
   21%,
   40% {
-    content: "Python Developer";
+    content: "Backend Developer";
+ 
   }
   41%,
   60% {
@@ -232,7 +233,7 @@ span {
   }
   81%,
   100% {
-    content: "Backend Developer";
+    content: "Python Developer";
   }
 }
 
