@@ -340,6 +340,7 @@ span {
   font-weight: 500;
   color: white;
   line-height: 22px;
+  text-align: center;
 }
 .timeline-content:hover {
   transform: scale(1.05);
