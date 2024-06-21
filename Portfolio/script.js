@@ -1,7 +1,28 @@
 let menuIcon = document.querySelector("#menu-icon");
+
 let navbar = document.querySelector(".navbar");
 let sections = document.querySelectorAll("section");
 let navlinks = document.querySelectorAll("header nav a");
+
+let morebtn = document.querySelector("#more");
+let lessbtn = document.querySelector("#less");
+let hideProjects = document.querySelector(
+  ".all-projects .projects-container-1"
+);
+console.log(morebtn);
+console.log(lessbtn);
+console.log(hideProjects);
+morebtn.addEventListener("click", () => {
+  hideProjects.style.display = "grid";
+  morebtn.style.display = "none";
+  lessbtn.style.display = "block";
+   hideProjects.style.marginTop ="2rem";
+});
+lessbtn.addEventListener("click", () => {
+  hideProjects.style.display = "none";
+  morebtn.style.display = "block";
+  lessbtn.style.display = "none";
+});
 
 window.onscroll = () => {
   sections.forEach((sec) => {
