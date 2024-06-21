@@ -663,6 +663,12 @@ span {
   .home-img img {
     width: 56vw;
   }
+  .project-info img {
+    width: 71vw;
+  }
+  .project-box .project-info{
+    padding: 0;
+  }
   .projects h2 {
     margin-bottom: 3rem;
   }
