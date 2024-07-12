@@ -397,7 +397,7 @@ span {
   gap: 2.5rem;
   width: 20%;
   margin-left: 5rem;
-
+  margin-top: 2.5rem;
   display: none;
 }
 .all-projects .btn {
