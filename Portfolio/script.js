@@ -3,7 +3,6 @@ let navbar = document.querySelector(".navbar");
 let sections = document.querySelectorAll("section");
 let navlinks = document.querySelectorAll("header nav a");
 
-
 window.onscroll = () => {
   sections.forEach((sec) => {
     let top = window.scrollY;
@@ -25,63 +24,82 @@ menuIcon.onclick = () => {
   menuIcon.classList.toggle("bx-x");
   navbar.classList.toggle("active");
 };
-
+  
 document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll('section');
+  const projectContainer = document.getElementById("project-container");
+  const showMoreBtn = document.getElementById("show-more");
+  const showLessBtn = document.getElementById("show-less");
+  let projects = [];
+  let isExpanded = false;
+
+  const observerOptions = {
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 500);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach((section, index) => {
+    observer.observe(section);
+  });
+
   fetch("project.json")
     .then((response) => response.json())
     .then((data) => {
-      const projectsContainer = document.getElementById("projects-container");
-      const projectsContainer1 = document.getElementById(
-        "projects-container-1"
-      );
+      projects = data;
+      renderProjects();
+    });
 
-      data.slice(0, 4).forEach((project) => {
-        const projectBox = createProjectBox(project);
-        projectsContainer.appendChild(projectBox);
-      });
+  function renderProjects() {
+    projectContainer.innerHTML = "";
+    const visibleProjects = isExpanded ? projects : projects.slice(0, 4);
 
-      data.slice(4).forEach((project) => {
-        const projectBox = createProjectBox(project);
-        projectsContainer1.appendChild(projectBox);
-      });
+    visibleProjects.forEach((project, index) => {
+      const projectBox = document.createElement("div");
+      projectBox.classList.add("project-box");
+      projectBox.innerHTML = `
+        <div class="img">
+          <img src="${project.img}" alt="${project.title}" />
+        </div>
+        <div class="content">
+          <div class="heading1">${project.title}</div>
+          <div class="desc">
+            <div class="heading1">${project.title}</div>
+            <p>${project.description}</p>
+            <div class="btn code">
+              <a href="${project.codeLink}">Code</a>
+            </div>
+          </div>
+        </div>
+      `;
+      projectContainer.appendChild(projectBox);
+      setTimeout(() => {
+        projectBox.classList.add("visible");
+      }, index * 100); 
+    });
 
-      document.getElementById("more").addEventListener("click", () => {
-        projectsContainer1.style.display = "grid";
-        document.getElementById("more").style.display = "none";
-        document.getElementById("less").style.display = "block";
+    showMoreBtn.style.display =
+      isExpanded || projects.length <= 4 ? "none" : "block";
+    showLessBtn.style.display = isExpanded ? "block" : "none";
+  }
 
-      });
+  showMoreBtn.addEventListener("click", () => {
+    isExpanded = true;
+    renderProjects();
+  });
 
-      document.getElementById("less").addEventListener("click", () => {
-        projectsContainer1.style.display = "none";
-        document.getElementById("more").style.display = "block";
-        document.getElementById("less").style.display = "none";
-      });
-    })
-    .catch((error) => console.error("Error fetching the projects:", error));
+  showLessBtn.addEventListener("click", () => {
+    isExpanded = false;
+    renderProjects();
+  });
 });
 
-function createProjectBox(project) {
-  const projectBox = document.createElement("div");
-  projectBox.classList.add("project-box");
-
-  const projectInfo = document.createElement("div");
-  projectInfo.classList.add("project-info");
-
-  const img = document.createElement("img");
-  img.src = project.image;
-  img.alt = "";
-
-  const link = document.createElement("a");
-  link.href = project.link;
-
-  const description = document.createElement("h3");
-  description.textContent = project.description;
-
-  link.appendChild(description);
-  projectInfo.appendChild(img);
-  projectInfo.appendChild(link);
-  projectBox.appendChild(projectInfo);
-
-  return projectBox;
-}
