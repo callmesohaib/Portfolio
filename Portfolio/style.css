@@ -25,6 +25,7 @@ body {
   color: var(--text-color);
 }
 
+
 #particles-js {
   position: fixed;
   top: 0;
@@ -82,6 +83,13 @@ body {
 section {
   min-height: 100vh;
   padding: 10rem 12% 10rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .home {
   display: flex;
@@ -279,7 +287,6 @@ span {
 }
 
 .education {
-
   padding: 100px 15px;
   background: var(--second-bg-color);
 }
@@ -376,85 +383,114 @@ span {
   width: 50px;
 }
 
-.projects {
-  background-color: var(--bg-color);
-  color: black;
-}
-.projects h2 {
-  margin-bottom: 5rem;
-  color: white;
-}
-.projects-container {
+.main-section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  gap: 2.5rem;
+  gap: 2rem;
+  justify-items: center;
+  align-items: start;
 }
-.projects-container-1 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  gap: 2.5rem;
-  width: 20%;
-  margin-left: 5rem;
-  margin-top: 2.5rem;
-  display: none;
-}
-.all-projects .btn {
-  position: relative;
-  left: calc(43% + 7px);
-  margin-top: 8rem;
-}
-.all-projects .less {
-  position: relative;
-  left: 43%;
-  margin-top: 8rem;
-  display: none;
+.project-box.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .project-box {
-  background-color: var(--main-color);
-  height: 300px;
-  border-radius: 3rem;
-  border: 5px solid transparent;
-  transition: 0.4s ease-in-out;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease,0.3s ease-in-out;
 }
 .project-box:hover {
-  background-color: #00cfc1;
-  color: black;
-  border: 5px solid black;
-  transform: scale(1.03);
-  box-shadow: 0 0 25px white, 0 0 50px white;
+  box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
 }
-.project-box .project-info {
+
+.img img {
+  width: 100%;
+  height: auto;
+}
+
+.content {
   display: flex;
   flex-direction: column;
-  text-align: left;
-  max-height: 200px;
-  justify-content: left;
-  align-items: baseline;
-  padding: 1rem 6rem;
+  justify-content: center;
+  align-items: center;
 }
 
-.project-info a {
-  font-size: 2rem;
+.project-box:hover .desc {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transform: translateY(0%);
+  height: 60%;
+}
+
+.heading1 {
+  width: 100%;
+  position: relative;
+  top: -2px;
+  font-size: 2.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 600;
-  margin-top: 1rem;
-  color: black;
+  background-color: var(--second-bg-color);
+  text-align: center;
+  height: 35px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: white;
+}
+
+.desc {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  height: 30%;
+  background-color: rgba(0, 0, 0, 0.361);
+  transform: translateY(100%);
+  transition: transform 0.5s;
+  backdrop-filter: blur(50px);
+}
+.desc p {
+  font-size: 1.5rem;
+}
+
+.desc .heading1 {
+  background-color: transparent;
+  color: white;
+}
+
+.desc .code {
+  width: 20%;
+  position: absolute;
+  left: 40%;
+  bottom: 5%;
+}
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.project .show {
+  margin-top: 2rem;
+  width: 15%;
   text-align: center;
 }
-
-.project-info a:hover {
-  cursor: pointer;
-  text-decoration: underline;
+.hide,
+.less {
+  display: none;
+  margin-top: 2rem;
 }
-
-.project-info img {
-  position: relative;
-  width: 25vw;
-  border-radius: 20px;
-  box-shadow: 0 0 25px var(--main-color);
-  cursor: pointer;
-  transition: 0.4s ease-in-out;
+.less a,
+.code a {
+  color: black;
 }
 
 .contact {
@@ -556,14 +592,6 @@ span {
   html {
     font-size: 55%;
   }
-  .projects-container {
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0 5rem;
-  }
-  .projects-container {
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0 5rem;
-  }
 }
 @media (max-width: 991px) {
   header {
@@ -589,9 +617,6 @@ span {
     left: 0;
   }
 
-  .projects {
-    padding-bottom: 7rem;
-  }
   .contact form {
     flex-direction: column;
   }
@@ -601,32 +626,6 @@ span {
   .project-box {
     position: relative;
     left: -5%;
-  }
-
-  .project-info h3 {
-    position: relative;
-    line-height: 1;
-    margin-top: 2rem;
-    text-align: center;
-  }
-
-  #more {
-    left: calc(35% + -6px);
-  }
-  #less {
-    left: calc(35% + -6px);
-  }
-  .project-info img {
-    margin-top: 2rem;
-    position: relative;
-    width: 50vw;
-    border-radius: 5px;
-    box-shadow: 0 0 25px var(--main-color);
-    cursor: pointer;
-    transition: 0.4s ease-in-out;
-  }
-  .project-info a {
-    text-align: center;
   }
 }
 
@@ -674,22 +673,44 @@ span {
   .home-img img {
     width: 56vw;
   }
-  .project-info img {
-    width: 71vw;
-  }
-  .project-box .project-info {
-    padding: 0;
-  }
-  .projects h2 {
-    margin-bottom: 3rem;
-  }
-  .projects-container {
-    grid-template-columns: repeat(1, 1fr);
 
-    margin-left: 6rem;
-  }
-  .projects-container-1 {
+  .main-section {
+    margin-left: 4rem;
+    display: grid;
     grid-template-columns: repeat(1, 1fr);
-    margin-left: 6rem;
+    margin-bottom: 5rem;
+  }
+  .heading1 {
+    top: -3px;
+  }
+  .desc {
+    display: flex;
+    flex-direction: column;
+  }
+  .desc .heading1 {
+    font-size: 1.5rem;
+  }
+  .desc p {
+    font-size: 1rem;
+  }
+  .hide {
+    margin-top: -3rem;
+  }
+  .desc .btn {
+    width: 30%;
+    text-align: center;
+    left: 35%;
+  }
+  .desc .code {
+    height: 20px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .project .show,
+  .project .less {
+    width: 40%;
+    margin-bottom: 5rem;
   }
 }
