@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let isExpanded = false;
 
   const observerOptions = {
-    threshold: 0.1
+    threshold: 0.1,
   };
 
   const observer = new IntersectionObserver((entries, observer) => {
@@ -75,9 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="desc">
               <div class="heading1">${project.title}</div>
               <p>${project.description}</p>
-              <div class="btn code">
-                <a href="${project.codeLink}">Code</a>
-              </div>
+               <a href="${project.codeLink}"><div class="btn code">
+               Code
+              </div></a>
             </div>
           </div>
         `;
