@@ -9,7 +9,7 @@
   font-family: "poppins", sans-serif;
 }
 
-:root { 
+:root {
   --bg-color: #080808;
   --second-bg-color: #131313;
   --text-color: white;
@@ -716,9 +716,12 @@ span {
     justify-content: center;
     align-items: center;
   }
-  .project .show,
-  .project .less {
+  .project .show {
     width: 40%;
+    margin-bottom: 5rem;
+  }
+  .project .less {
+    width: 100%;
     margin-bottom: 5rem;
   }
 }
