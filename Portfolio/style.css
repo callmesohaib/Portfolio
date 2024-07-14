@@ -9,7 +9,7 @@
   font-family: "poppins", sans-serif;
 }
 
-:root {
+:root { 
   --bg-color: #080808;
   --second-bg-color: #131313;
   --text-color: white;
@@ -392,6 +392,8 @@ span {
 .project-box {
   width: 100%;
   overflow: hidden;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
   position: relative;
   opacity: 0;
   transform: translateY(20px);
@@ -420,8 +422,8 @@ span {
 }
 
 .project-box:hover .desc {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
   transform: translateY(0%);
   height: 60%;
   transition: transform 1s ease, height 1s ease;
@@ -453,10 +455,10 @@ span {
   width: 100%;
   color: white;
   height: 30%;
-  background-color: rgba(0, 0, 0, 0.361);
+  background-color: #00ffee61;
   transform: translateY(100%);
-  transition: transform 1s ease, height 1s ease; /* Smooth transition for hover out */
-  backdrop-filter: blur(50px);
+  transition: transform 1s ease, height 1s ease;
+  backdrop-filter: blur(200px);
 }
 
 .desc p {

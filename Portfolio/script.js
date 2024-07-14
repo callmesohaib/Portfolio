@@ -24,49 +24,49 @@ menuIcon.onclick = () => {
   menuIcon.classList.toggle("bx-x");
   navbar.classList.toggle("active");
 };
-    
-  document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll('section');
-    const projectContainer = document.getElementById("project-container");
-    const showMoreBtn = document.getElementById("show-more");
-    const showLessBtn = document.getElementById("show-less");
-    let projects = [];
-    let isExpanded = false;
 
-    const observerOptions = {
-      threshold: 0.1
-    };
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section");
+  const projectContainer = document.getElementById("project-container");
+  const showMoreBtn = document.getElementById("show-more");
+  const showLessBtn = document.getElementById("show-less");
+  let projects = [];
+  let isExpanded = false;
 
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, index * 500);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
+  const observerOptions = {
+    threshold: 0.1
+  };
 
-    sections.forEach((section, index) => {
-      observer.observe(section);
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add("visible");
+        }, index * 500);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach((section, index) => {
+    observer.observe(section);
+  });
+
+  fetch("project.json")
+    .then((response) => response.json())
+    .then((data) => {
+      projects = data;
+      renderProjects();
     });
 
-    fetch("project.json")
-      .then((response) => response.json())
-      .then((data) => {
-        projects = data;
-        renderProjects();
-      });
+  function renderProjects() {
+    projectContainer.innerHTML = "";
+    const visibleProjects = isExpanded ? projects : projects.slice(0, 4);
 
-    function renderProjects() {
-      projectContainer.innerHTML = "";
-      const visibleProjects = isExpanded ? projects : projects.slice(0, 4);
-
-      visibleProjects.forEach((project, index) => {
-        const projectBox = document.createElement("div");
-        projectBox.classList.add("project-box");
-        projectBox.innerHTML = `
+    visibleProjects.forEach((project, index) => {
+      const projectBox = document.createElement("div");
+      projectBox.classList.add("project-box");
+      projectBox.innerHTML = `
           <div class="img">
             <img src="${project.img}" alt="${project.title}" />
           </div>
@@ -81,25 +81,24 @@ menuIcon.onclick = () => {
             </div>
           </div>
         `;
-        projectContainer.appendChild(projectBox);
-        setTimeout(() => {
-          projectBox.classList.add("visible");
-        }, index * 100); 
-      });
-
-      showMoreBtn.style.display =
-        isExpanded || projects.length <= 4 ? "none" : "block";
-      showLessBtn.style.display = isExpanded ? "block" : "none";
-    }
-
-    showMoreBtn.addEventListener("click", () => {
-      isExpanded = true;
-      renderProjects();
+      projectContainer.appendChild(projectBox);
+      setTimeout(() => {
+        projectBox.classList.add("visible");
+      }, index * 100);
     });
 
-    showLessBtn.addEventListener("click", () => {
-      isExpanded = false;
-      renderProjects();
-    });
+    showMoreBtn.style.display =
+      isExpanded || projects.length <= 4 ? "none" : "block";
+    showLessBtn.style.display = isExpanded ? "block" : "none";
+  }
+
+  showMoreBtn.addEventListener("click", () => {
+    isExpanded = true;
+    renderProjects();
   });
 
+  showLessBtn.addEventListener("click", () => {
+    isExpanded = false;
+    renderProjects();
+  });
+});
