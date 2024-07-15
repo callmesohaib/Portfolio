@@ -1,0 +1,50 @@
+[
+  {
+    "img": "img/laravel web.png",
+    "title": "Customer Registration System",
+    "description": "A simple customer registration system using Laravel framework. It includes user Registration, Temporary Delete, Restore, Search and Delete functionality.",
+    "codeLink": "https://github.com/callmesohaib/Laravel-Project"
+  },
+  {
+    "img": "img/instaclone.png",
+    "title": "Instagram Clone",
+    "description": "Instagram Clone using Laravel framework. It includes Login, Signup, Logout, Posting Images and Comments, Delete posts and Modification of the Profile functionality.",
+    "codeLink": "https://github.com/callmesohaib/InstaPosts"
+  },
+  {
+    "img": "img/twitterClone.png",
+    "title": "Twitter Clone",
+    "description": "Fully responsive Clone of Twitter using Tailwind CSS.",
+    "codeLink": "https://github.com/callmesohaib/TwitterClone"
+  },
+  {
+    "img": "img/2022-CS-621-623-636.cpp - DAA Assignment - Visual Studio Code 19-Jun-24 2_57_53 PM.png",
+    "title": "Code Analysis",
+    "description": "Analyzing the Relations and finding the Runtime using Master, Extended Master and Muster Theorems.",
+    "codeLink": "https://github.com/callmesohaib/Code-Analysis"
+  },
+  {
+    "img": "img/JsChecker.png",
+    "title": "JavaScript Checker",
+    "description": "JavaScript Checker using HTML, CSS, JavaScript. This is mainly done by making the regular expressions of JavaScript.",
+    "codeLink": "https://github.com/callmesohaib/Js-Checker"
+  },
+  {
+    "img": "img/Rock Paper Scissor - Google Chrome 21-Jun-24 12_42_34 PM.png",
+    "title": "Stone-Paper-Scissor",
+    "description": "Stone-Paper-Scissor game using HTML, CSS, JavaScript. This is mainly done by making the game logic.",
+    "codeLink": "https://github.com/callmesohaib/Stone-Paper_Scissor-"
+  },
+  {
+    "img": "img/TIC-TAC-TOE Game - Google Chrome 19-Jun-24 3_06_38 PM.png",
+    "title": "TIC-TAC-TOE",
+    "description": "Tic-tac-toe game using HTML, CSS, JavaScript. This is mainly done by making the game logic.",
+    "codeLink": "https://github.com/callmesohaib/Tic-Tac-Toe"
+  },
+  {
+    "img": "img/tut63.py - Python - Visual Studio Code 19-Jun-24 3_01_47 PM.png",
+    "title": "PDF Merger",
+    "description": "PDF Merger using Python and PyPDF2. Multiple PDFs are merged and become one large PDF.",
+    "codeLink": "https://github.com/callmesohaib/PdF-Merger"
+  }
+]

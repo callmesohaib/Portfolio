@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(section);
   });
 
-  fetch("project.json")
+  fetch("./JSON/project.json")
     .then((response) => response.json())
     .then((data) => {
       projects = data;
@@ -102,3 +102,25 @@ document.addEventListener("DOMContentLoaded", () => {
     renderProjects();
   });
 });
+
+fetch("./JSON/skills.json")
+  .then((response) => response.json())
+  .then((data) => {
+    skills = data;
+    showSkills(skills);
+  });
+
+function showSkills(skills) {
+  let skillsContainer = document.getElementById("skillsContainer");
+  let skillHTML = "";
+  skills.forEach((skill) => {
+    skillHTML += `
+      <div class="bar">
+            <div class="info">
+              <img src=${skill.icon} alt="skill" />
+              <span>${skill.name}</span>
+            </div>
+          </div>`;
+  });
+  skillsContainer.innerHTML = skillHTML;
+}
