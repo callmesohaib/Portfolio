@@ -446,7 +446,7 @@ height: 50px;
   position: relative;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease, 0.3s ease-in-out;
+  transition: opacity 1s ease, transform 1s ease, 0.3s ease-in-out;
 }
 
 .project-box.visible {
@@ -475,7 +475,7 @@ height: 50px;
   border-top-left-radius: 20px;
   transform: translateY(0%);
   height: 60%;
-  transition: transform 0.5s ease, height 0.5s ease;
+  transition: transform 1s ease, height 1s ease;
 }
 .heading1 {
   width: 100%;
@@ -506,7 +506,7 @@ height: 50px;
   height: 30%;
   background-color: #00ffee61;
   transform: translateY(100%);
-  transition: transform 0.5s ease, height 0.5s ease;
+  transition: transform 1s ease, height 1s ease;
   backdrop-filter: blur(200px);
 }
 
