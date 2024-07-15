@@ -775,7 +775,7 @@ height: 50px;
     margin: 0;
   }
   .skills .container .row {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     margin: 1rem;
     padding: 2rem 0.2rem 2rem 0.2rem;
     gap: 1rem;
@@ -785,7 +785,7 @@ height: 50px;
     width: 100%;
   }
   .skills .container .bar .info span{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
   .skills .container .bar{
     margin-bottom:0 ;
