@@ -785,6 +785,9 @@ height: 50px;
     width: 100%;
   }
   .skills .container .bar .info span{
-    font-size: 1rem;
+    font-size: 1.3rem;
+  }
+  .skills .container .bar{
+    margin-bottom:0 ;
   }
 }
