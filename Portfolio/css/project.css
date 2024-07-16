@@ -142,7 +142,7 @@
 
   .desc .code {
     width: 30%;
-    height: 20px;
+    height: 30px;
     font-size: 1.5rem;
     display: flex;
     justify-content: center;
@@ -150,7 +150,7 @@
     top: 10rem;
     text-align: center;
     left: 35%;
-    border-radius: 10px;
+    border-radius: 6px;
   }
   .project .show,
   .project last-child {
