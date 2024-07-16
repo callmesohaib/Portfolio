@@ -806,14 +806,14 @@ span {
     display: none;
   }
   .skill-show {
-    display: none;
+    display: block;
     position: relative;
     text-align: center;
     bottom: 15px;
     width: 55%;
   }
   .container a {
-    display: flex;
+    display: none;
     position: relative;
     text-align: center;
     bottom: 15px;
