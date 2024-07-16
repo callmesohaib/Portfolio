@@ -780,6 +780,7 @@ span {
     padding: 0;
     margin: 0;
   }
+
   .skills .container .row {
     grid-template-columns: repeat(2, 1fr);
     margin: 1rem;
@@ -787,6 +788,7 @@ span {
     gap: 1rem;
     width: 100%;
   }
+
   .skills .container {
     margin-top: 5px;
     display: flex;
@@ -796,15 +798,24 @@ span {
     align-items: center;
     width: 100%;
   }
+
   .skills .container .bar .info span {
     font-size: 1.5rem;
   }
+
   .skills .container .bar {
     margin-bottom: 0;
+    transition: opacity 0.5s ease-in-out;
   }
+
+  .skills .container .bar.visible {
+    opacity: 1;
+  }
+
   .skills .container .bar.hidden {
     display: none;
   }
+
   .skill-show {
     display: block;
     position: relative;
@@ -812,7 +823,8 @@ span {
     bottom: 15px;
     width: 55%;
   }
-  .container a .skill-less {
+
+  .skill-less {
     display: none;
     position: relative;
     text-align: center;
