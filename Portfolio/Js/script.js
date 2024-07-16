@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <img src="${project.img}" alt="${project.title}" />
           </div>
           <div class="content">
-            <div class="heading1">${project.title}</div>
+          
             <div class="desc">
               <div class="heading1">${project.title}</div>
               <p>${project.description}</p>

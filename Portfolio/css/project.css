@@ -40,57 +40,54 @@
 .project-box:hover .desc {
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
-  transform: translateY(0%);
-  height: 60%;
-  transition: transform 0.3s ease-in-out, height 0.3s ease-in-out;
+  transform: translateY(25%);
+  height: 80%;
+  transition: transform 0.2s ease-in-out, height 0.2s ease-in-out;
 }
-.heading1 {
-  width: 100%;
-  position: relative;
-  top: -2px;
-  font-size: 2.3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 600;
-  background-color: var(--second-bg-color);
-  text-align: center;
-  height: 35px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  color: white;
-}
-
 .desc {
   display: flex;
   flex-direction: column;
   text-align: center;
   padding: 1rem;
   position: absolute;
-  bottom: -1px;
+  bottom: 37px;
   width: 100%;
-  color: white;
+  color: black;
   height: 30%;
-  background-color: #00ffee61;
+  background-color: rgba(0, 0, 0, 0.514);
   transform: translateY(100%);
-  transition: transform 0.3s ease-in-out, height 0.3s ease-in-out;
-  backdrop-filter: blur(200px);
+  transition: transform 0.2s ease-in-out, height 0.2s ease-in-out;
+  backdrop-filter: blur(20px);
 }
 
 .desc p {
   font-size: 1.5rem;
+  margin-top: 4rem;
+  color: white;
 }
 
 .desc .heading1 {
-  background-color: transparent;
-  color: white;
+  top: 0;
+  position: absolute;
+  background-color: var(--main-color);
+  font-size: 2.3rem;
+  width: 100%;
+  left: 0;
+  height: 6.5vh;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .desc .code {
   width: 20%;
   position: absolute;
   left: 40%;
-  bottom: 5%;
+  bottom: 10%;
+  border: 1px solid black;
+  box-shadow: none;
+  border-radius: 10px;
 }
 
 .project {
@@ -124,33 +121,36 @@
     grid-template-columns: repeat(1, 1fr);
     margin-bottom: 5rem;
   }
-  .heading1 {
-    top: -3px;
-  }
   .desc {
     display: flex;
     flex-direction: column;
+    bottom: 20px;
   }
   .desc .heading1 {
-    font-size: 1.5rem;
+    top: -10px;
+    height: 30px;
+    position: absolute;
+    font-size: 1.7rem;
   }
   .desc p {
-    font-size: 1rem;
+    margin-top: 2rem;
+    font-size: 1.3rem;
   }
   .hide {
     margin-top: -3rem;
   }
-  .desc .btn {
-    width: 30%;
-    text-align: center;
-    left: 35%;
-  }
+
   .desc .code {
+    width: 30%;
     height: 20px;
     font-size: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    top: 12rem;
+    text-align: center;
+    left: 35%;
+    border-radius: 10px;
   }
   .project .show,
   .project last-child {
@@ -160,5 +160,8 @@
   .project-box {
     position: relative;
     left: -5%;
+  }
+  .project-box:hover .desc {
+    transform: translateY(25%);
   }
 }
