@@ -432,7 +432,8 @@ span {
   font-weight: 500;
   font-family: "Poppins";
 }
-.skill-show {
+.skill-show,
+.show-less {
   display: none;
 }
 
@@ -805,10 +806,17 @@ span {
     display: none;
   }
   .skill-show {
-    display: block  ;
+    display: none;
     position: relative;
     text-align: center;
     bottom: 15px;
     width: 55%;
+  }
+  .container a {
+    display: flex;
+    position: relative;
+    text-align: center;
+    bottom: 15px;
+    color: black;
   }
 }
