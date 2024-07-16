@@ -812,7 +812,7 @@ span {
     bottom: 15px;
     width: 55%;
   }
-  .container a {
+  .container a .skill-less {
     display: none;
     position: relative;
     text-align: center;
