@@ -1,0 +1,111 @@
+.skills {
+  min-height: 90vh;
+  background: linear-gradient(to bottom, var(--bg-color), var(--main-color));
+}
+
+.skills .container {
+  background: #13131377;
+  color: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 90%;
+  margin: auto;
+  margin-top: 2rem;
+}
+.skills .container .row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  flex-wrap: wrap;
+  gap: 1.8rem;
+}
+.skills .container .bar {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: var(--second-bg-color);
+  transition: 0.2s;
+}
+.skills .container .bar.hidden {
+  display: block;
+}
+.skills .container .bar:hover {
+  box-shadow: 0 0px 25px var(--main-color), 0 0px 50px var(--main-color) !important;
+  background-color: var(--bg-color) !important;
+}
+.skills .container .bar .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.skills .container .bar .info img {
+  height: 50px;
+}
+.skills .container .bar .info span {
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: "Poppins";
+}
+.container .skill-show,
+.container a .skill-less {
+  display: none;
+}
+
+@media (max-width: 895px) {
+  .skills .container {
+    padding: 0;
+    margin: 0;
+  }
+
+  .skills .container .row {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1rem;
+    padding: 2rem 0.2rem 2rem 0.2rem;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .skills .container {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  .skills .container .bar .info span {
+    font-size: 1.5rem;
+  }
+
+  .skills .container .bar {
+    margin-bottom: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .skills .container .bar.visible {
+    opacity: 1;
+  }
+
+  .skills .container .bar.hidden {
+    display: none;
+  }
+
+ .container .skill-show {
+    display: block;
+    position: relative;
+    text-align: center;
+    bottom: 15px;
+    width: 55%;
+  }
+  .container a .skill-less {
+    position: relative;
+    text-align: center;
+    bottom: 15px;
+    color: black;
+    display: none;
+  }
+}
