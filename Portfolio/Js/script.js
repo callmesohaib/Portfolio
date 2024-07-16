@@ -103,47 +103,44 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-
 fetch("./JSON/skills.json")
-.then((response) => response.json())
-.then((data) => {
-  skills = data;
-  showSkills(skills);
-});
+  .then((response) => response.json())
+  .then((data) => {
+    skills = data;
+    showSkills(skills);
+  });
 
 function showSkills(skills) {
-let skillsContainer = document.getElementById("skillsContainer");
-let skillHTML = "";
-skills.forEach((skill, index) => {
-  skillHTML += `
-    <div class="bar ${index >= 6 ? "hidden" : ""}">
-      <div class="info">
-        <img src=${skill.icon} alt="skill" />
-        <span>${skill.name}</span>
-      </div>
-    </div>`;
-});
-skillsContainer.innerHTML = skillHTML;
+  let skillsContainer = document.getElementById("skillsContainer");
+  let skillHTML = "";
+  skills.forEach((skill, index) => {
+    skillHTML += `
+      <div class="bar ${index >= 6 ? "hidden" : ""}">
+        <div class="info">
+          <img src=${skill.icon} alt="skill" />
+          <span>${skill.name}</span>
+        </div>
+      </div>`;
+  });
+  skillsContainer.innerHTML = skillHTML;
 }
 
 function showMoreSkills() {
-let hiddenSkills = document.querySelectorAll(".bar.hidden");
-hiddenSkills.forEach((skill) => {
-  skill.classList.remove("hidden");
-});
-document.querySelector(".skill-show").style.display = "none";
-document.querySelector(".skill-less").style.display = "flex";
+  let hiddenSkills = document.querySelectorAll(".bar.hidden");
+  hiddenSkills.forEach((skill) => {
+    skill.classList.remove("hidden");
+  });
+  document.querySelector(".skill-show").style.display = "none";
+  document.querySelector(".skill-less").style.display = "block";
 }
 
 function showLessSkills() {
-let skills = document.querySelectorAll(".bar");
-skills.forEach((skill, index) => {
-  if (index >= 6) {
-    skill.classList.add("hidden");
-
-  }
-});
-document.querySelector(".skill-show").style.display = "block";
-document.querySelector(".skill-less").style.display = "none";
+  let skills = document.querySelectorAll(".bar");
+  skills.forEach((skill, index) => {
+    if (index >= 6) {
+      skill.classList.add("hidden");
+    }
+  });
+  document.querySelector(".skill-show").style.display = "block";
+  document.querySelector(".skill-less").style.display = "none";
 }
