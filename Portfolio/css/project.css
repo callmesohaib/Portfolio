@@ -67,7 +67,7 @@
   text-align: center;
   padding: 1rem;
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   width: 100%;
   color: white;
   height: 30%;
