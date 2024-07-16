@@ -384,7 +384,7 @@ span {
 
 .skills {
   min-height: 90vh;
-  background: linear-gradient(to bottom,var(--bg-color) ,var(--main-color));
+  background: linear-gradient(to bottom, var(--bg-color), var(--main-color));
 }
 
 .skills .container {
@@ -410,6 +410,9 @@ span {
   background: var(--second-bg-color);
   transition: 0.2s;
 }
+.skills .container .bar.hidden {
+  display: block;
+}
 .skills .container .bar:hover {
   box-shadow: 0 0px 25px var(--main-color), 0 0px 50px var(--main-color) !important;
   background-color: var(--bg-color) !important;
@@ -422,14 +425,16 @@ span {
   margin-top: 1rem;
 }
 .skills .container .bar .info img {
-height: 50px;
+  height: 50px;
 }
 .skills .container .bar .info span {
   font-size: 2rem;
   font-weight: 500;
   font-family: "Poppins";
 }
-
+.skill-show {
+  display: none;
+}
 
 .main-section {
   display: grid;
@@ -775,19 +780,34 @@ height: 50px;
     margin: 0;
   }
   .skills .container .row {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     margin: 1rem;
     padding: 2rem 0.2rem 2rem 0.2rem;
     gap: 1rem;
+    width: 100%;
   }
   .skills .container {
     margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
   }
-  .skills .container .bar .info span{
+  .skills .container .bar .info span {
     font-size: 1.5rem;
   }
-  .skills .container .bar{
-    margin-bottom:0 ;
+  .skills .container .bar {
+    margin-bottom: 0;
+  }
+  .skills .container .bar.hidden {
+    display: none;
+  }
+  .skill-show {
+    display: flex;
+    position: relative;
+    bottom: 15px;
+    /* left: 30%; */
+    width: 36%;
   }
 }

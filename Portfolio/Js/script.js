@@ -102,7 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
     renderProjects();
   });
 });
-
 fetch("./JSON/skills.json")
   .then((response) => response.json())
   .then((data) => {
@@ -113,14 +112,14 @@ fetch("./JSON/skills.json")
 function showSkills(skills) {
   let skillsContainer = document.getElementById("skillsContainer");
   let skillHTML = "";
-  skills.forEach((skill) => {
+  skills.forEach((skill, index) => {
     skillHTML += `
-      <div class="bar">
-            <div class="info">
-              <img src=${skill.icon} alt="skill" />
-              <span>${skill.name}</span>
-            </div>
-          </div>`;
+      <div class="bar ${index >= 6 ? 'hidden' : ''}">
+        <div class="info">
+          <img src=${skill.icon} alt="skill" />
+          <span>${skill.name}</span>
+        </div>
+      </div>`;
   });
   skillsContainer.innerHTML = skillHTML;
 }
