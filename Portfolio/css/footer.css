@@ -3,7 +3,8 @@
   bottom: 0;
   width: 100%;
   padding: 40px 0;
-  background-color: var(--bg-color);
+  background: linear-gradient(to bottom, var(--bg-color), var(--main-color));
+
 }
 
 .footer .social {
@@ -40,7 +41,8 @@
   text-align: center;
 }
 .list a {
-  color: white;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
   transition: 0.2s ease-in-out;
 }
 .footer ul li a:hover {
@@ -52,10 +54,11 @@
   padding: 0 10px;
 }
 .footer .copyright {
-  margin-top: 50px;
+  margin-top: 30px;
   text-align: center;
   font-size: 16px;
-  color: white;
+  font-weight: 600;
+  color: black;
 }
 
 @media (max-width: 991px) {
