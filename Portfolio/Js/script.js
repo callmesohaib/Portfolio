@@ -70,14 +70,13 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="img">
             <img src="${project.img}" alt="${project.title}" />
           </div>
-          <div class="content">
+          
             <div class="desc">
-              <div class="heading1">${project.title}</div>
+              <div class="project-heading">${project.title}</div>
               <p>${project.description}</p>
                <a href="${project.codeLink}"><div class="btn code">
                Code
               </div></a>
-            </div>
           </div>
         `;
       projectContainer.appendChild(projectBox);

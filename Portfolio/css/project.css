@@ -1,3 +1,10 @@
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .main-section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -27,16 +34,7 @@
 
 .img img {
   width: 100%;
-  height: auto;
 }
-
-.content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .project-box:hover .desc {
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
@@ -51,13 +49,12 @@
   padding: 1rem;
   position: absolute;
   bottom: 37px;
-  width: 100%;
   color: black;
   height: 30%;
   background-color: rgba(0, 0, 0, 0.514);
   transform: translateY(100%);
   transition: transform 0.2s ease-in-out, height 0.2s ease-in-out;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
 }
 
 .desc p {
@@ -66,18 +63,18 @@
   color: white;
 }
 
-.desc .heading1 {
-  top: 0;
+.desc .project-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
+  top: 0;
   background-color: var(--main-color);
   font-size: 2.3rem;
   width: 100%;
   left: 0;
   height: 6.5vh;
   font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .desc .code {
@@ -85,16 +82,8 @@
   position: absolute;
   left: 40%;
   bottom: 10%;
-  border: 1px solid black;
-  box-shadow: none;
+  box-shadow: 0 0 25px var(--main-color);
   border-radius: 10px;
-}
-
-.project {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .project .show {
@@ -102,8 +91,6 @@
   width: 15%;
   text-align: center;
 }
-
-.hide,
 .less {
   display: none;
   margin-top: 2rem;
@@ -122,31 +109,26 @@
     margin-bottom: 5rem;
   }
   .desc {
-    display: flex;
-    flex-direction: column;
     bottom: 20px;
   }
-  .desc .heading1 {
+  .desc .project-heading {
     top: -10px;
     height: 30px;
-    position: absolute;
     font-size: 1.7rem;
   }
   .desc p {
     margin-top: 2rem;
     font-size: 1.3rem;
   }
-  .hide {
-    margin-top: -3rem;
-  }
+
 
   .desc .code {
-    width: 30%;
-    height: 30px;
-    font-size: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 30%;
+    height: 30px;
+    font-size: 1.5rem;
     top: 10rem;
     text-align: center;
     left: 35%;
