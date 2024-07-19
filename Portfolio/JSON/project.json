@@ -18,6 +18,12 @@
     "codeLink": "https://github.com/callmesohaib/TwitterClone"
   },
   {
+    "img": "img/solo-tech.png",
+    "title": "Solo-Tech ",
+    "description": "I developed the fully functional webiste for Tech Company for MernStack Practice. There are multiple of features like Login, Register, Logout and many other pages related to any tech company.",
+    "codeLink": "https://github.com/callmesohaib/solo-tech"
+  },
+  {
     "img": "img/2022-CS-621-623-636.cpp - DAA Assignment - Visual Studio Code 19-Jun-24 2_57_53 PM.png",
     "title": "Code Analysis",
     "description": "Analyzing the Relations and finding the Runtime using Master, Extended Master and Muster Theorems.",
